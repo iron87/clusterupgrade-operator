@@ -1,0 +1,5 @@
+---
+# tasks file for ClusterUpgrade
+- name: run command on host
+  ansible.builtin.shell: |
+    ls

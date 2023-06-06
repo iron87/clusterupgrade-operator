@@ -1,0 +1,7 @@
+---
+# Use the 'create api' subcommand to add watches to this file.
+- version: v1alpha1
+  group: cluster.aruba.it
+  kind: ClusterUpgrade
+  playbook: /opt/ansible/playbooks/playbook.yaml
+#+kubebuilder:scaffold:watch

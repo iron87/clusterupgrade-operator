@@ -1,0 +1,10 @@
+ 
+- hosts: localhost
+  gather_facts: false
+  roles:
+    - setnodesip
+
+- hosts: nodes
+  gather_facts: false
+  roles:
+    - role: clusterupgrade
