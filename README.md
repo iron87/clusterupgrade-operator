@@ -6,7 +6,7 @@ This project is an Ansible operator built with Operator SDK, designed to execute
 
 - `playbooks`: Contains the playbook (`playbook.yaml`) to be executed by the operator.
 - `config`: Includes the CRD definition and sample CRs.
-- `roles/clusterupgrade`: Holds the Ansible role for performing the cluster upgrade.
+- `roles/clusterupgrade`: Holds the Ansible role for performing the cluster upgrade custom logic.
      - `files`: This directory should contain the private key file named `test-key` for connecting to the nodes. The name and path can be modified within the playbook, where the user for node connections can also be configured.
 
 
