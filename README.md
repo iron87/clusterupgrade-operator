@@ -1,4 +1,4 @@
-# Ansible Operator Readme
+# Ansible Operator 
 
 This project is an Ansible operator built with Operator SDK, designed to execute the playbook located in `playbooks/playbook.yaml`. The operator provides a custom resource definition (CRD) called `ClusterUpgrade`, defined in the `config` directory. The CR (Custom Resource) allows passing extra variables to Ansible as key-value pairs within the spec. In this case, we utilize it to pass the IP addresses of the nodes where the `clusterupgrade` role, defined in the `roles/clusterupgrade` directory, will be executed. An example CR can be found in the `config/samples` folder.
 
