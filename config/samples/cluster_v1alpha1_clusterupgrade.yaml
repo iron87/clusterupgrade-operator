@@ -9,6 +9,6 @@ metadata:
     app.kubernetes.io/created-by: clusterupgrade-operator
   name: clusterupgrade-sample
 spec:
-  # TODO(user): Add fields here
   nodes_ip: 
     - 10.244.0.13
+  upgraded: false

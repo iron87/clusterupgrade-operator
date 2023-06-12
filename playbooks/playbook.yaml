@@ -11,5 +11,9 @@
 
 - hosts: nodes
   gather_facts: false
-  roles:
-    - clusterupgrade
+  tasks:
+  - name: Wait for system to become reachable
+    ansible.builtin.wait_for_connection:
+
+  - import_role:
+      name: clusterupgrade

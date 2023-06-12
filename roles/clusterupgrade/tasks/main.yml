@@ -1,5 +1,14 @@
 ---
-# tasks file for ClusterUpgrade
-- name: run command on host
-  ansible.builtin.shell: |
-    ls
+- name: update kubelet config
+  command: "sed -i 's/--register-node=false//' /etc/default/kubelet"
+  when: not upgraded
+
+- name: Test for line
+  shell: grep -qxF ' --register-node=false' /etc/default/kubelet || echo ' --register-node=false' >> /etc/default/kubelet
+  when: upgraded
+
+- name: reload config
+  command: systemctl daemon-reload
+
+- name: restart kubelet
+  command: systemctl restart kubelet.service
