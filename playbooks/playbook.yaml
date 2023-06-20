@@ -6,14 +6,14 @@
       name: '{{ item }}'
       groups: nodes
       ansible_private_key_file: /opt/ansible/roles/clusterupgrade/files/test-key
-      ansible_ssh_user: root
+      ansible_ssh_user: ubuntu
     loop: "{{ nodes_ip }}"
 
 - hosts: nodes
   gather_facts: false
+  become: true
   tasks:
   - name: Wait for system to become reachable
     ansible.builtin.wait_for_connection:
-
   - import_role:
       name: clusterupgrade
